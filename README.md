@@ -1,4 +1,4 @@
-# hash-coder
+Student Data Visualization
 Student data Graphical presentation and mailing system
 My first ever project on python
 I learned python by my on without any help
