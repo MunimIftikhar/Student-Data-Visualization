@@ -44,13 +44,7 @@ class readFile:
         sheet = pd.read_excel('ResultSheet.xlsx', self.sheetName)
         x = sheet[ncol]
         sizee = 0
-        for i in range(2, len(x)):
-            if (x[i] is not np.nan):
-                if (x[i] is not np.nan):
-                    self.totalMarks = x[i]
-                    sizee = i + 2
-                break
-            i = i + 1
-        for size in range(sizee, len(x)):
+        self.totalMarks=100
+        for size in range(len(x)):
             if (x[size] is not np.nan):
                 self.absoluteMarks.append(x[size])

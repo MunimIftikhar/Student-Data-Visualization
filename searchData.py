@@ -6,7 +6,7 @@ import openpyxl as op
 from ReadFile import readFile
 from findPoints import Find_Points
 from weakStudents import weakStudents
-from comlexGraphs import complexGraphs
+from complexGraphs import complexGraphs
 from checkData import CheckData
 
 class SearchData:

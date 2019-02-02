@@ -7,7 +7,7 @@ import os
 from ReadFile import readFile
 from findPoints import Find_Points
 from weakStudents import weakStudents
-from comlexGraphs import complexGraphs
+from complexGraphs import complexGraphs
 
 class CheckData:
 
