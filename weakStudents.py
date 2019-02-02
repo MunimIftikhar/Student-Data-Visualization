@@ -13,14 +13,15 @@ class weakStudents:
 
     def find_weak_std(self,marks=[],reg=[],name=[],tmarks=0.0):
         points = Find_Points()
-        points.find_avg(marks,tmarks)
-
+        points.find_avg(marks)
+        j=1
         for i in range(len(marks)):
             if(marks[i]<points.avg):
-                self.weak_std.append(marks[i])
-                self.weak_std_rg.append(marks[i])
+                self.weak_std.append(marks[j])
+                self.weak_std_rg.append(reg[i])
                 self.weak_stdname.append(name[i])
             i=i+1
+            j=j+1
 
     def createMail(self,arr=[]):
         size = len(arr)

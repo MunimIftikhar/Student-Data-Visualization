@@ -7,7 +7,7 @@ from xlwt import Workbook
 from ReadFile import readFile
 from findPoints import Find_Points
 from weakStudents import weakStudents
-from comlexGraphs import complexGraphs
+from complexGraphs import complexGraphs
 from Mail_Weakstd import sendMail
 from checkData import CheckData
 from searchData import SearchData

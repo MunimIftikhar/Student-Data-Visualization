@@ -7,7 +7,7 @@ from xlwt import Workbook
 from ReadFile import readFile
 from findPoints import Find_Points
 from weakStudents import weakStudents
-from comlexGraphs import complexGraphs
+from complexGraphs import complexGraphs
 from checkData import CheckData
 from searchData import SearchData
 from write import Write
@@ -15,7 +15,6 @@ from write import Write
 wb = op.load_workbook('ResultSheet.xlsx')
 sheets = wb.sheetnames
 print(sheets)
-
 def Menu1(column):
     print("Enter 1 to plot any " + column +" number")
     print("Enter 2 to plot total "+ column +" absolute marks")
@@ -33,6 +32,7 @@ def Menu1(column):
             print(Lab)
             if (Lab != 0):
                 graph = complexGraphs()
+                print(sheets)
                 graph.draw_graph_ofAllSecMaxPoints(Lab, sheets)
                 return 1
             else:
@@ -216,9 +216,9 @@ def Menu3(col):
         for i in range(len(sheets)):
             file=readFile(sheets[i])
             file.readRegAndNames()
-            file.Marks(col)
+            file.readMarks(col)
             std=weakStudents()
-            std.find_weak_std(file.Marks,file.registerations,file.names)
+            std.find_weak_std(file.Marks,file.registerations,file.names,file.totalMarks)
             mails=std.createMail(std.weak_std_rg)
             obj.writee(col,std.weak_stdname,std.weak_std_rg,mails)
         return 1
@@ -232,6 +232,8 @@ def Menu3(col):
                 std = weakStudents()
                 std.find_weak_std(file.Marks, file.registerations, file.names,file.totalMarks)
                 mails = std.createMail(std.weak_std_rg)
+                if(std.weak_stdname[0]==''):
+                    print('There is no weak student present')
                 obj.writee(col, std.weak_stdname, std.weak_std_rg, mails)
                 return 1
             else:

@@ -10,7 +10,7 @@ import xlsxwriter
 class Write:
 
     def __init__(self):
-        self.index=0
+        self.index=1
 
     def createFile(self):
         wb = xlsxwriter.Workbook('WeakStudents.xls')
@@ -36,14 +36,14 @@ class Write:
        rb=rd.open_workbook('WeakStudents.xls')
        cop=copy(rb)
        wsheet=cop.get_sheet(sheetname)
-       for i in range(self.index,len(name)):
-           wsheet.write(i, 0, name)
-           wsheet.write(i, 1, email)
-           wsheet.write(i, 2, reg)
+       j = 0
+       for i in range(self.index,len(reg)):
+           wsheet.write(i, 0, name[j])
+           wsheet.write(i, 1, email[j])
+           wsheet.write(i, 2, reg[j])
            self.index+=1
+           i=i+1
+           j=j+1
        cop.save('WeakStudents.xls')
+      # print('write')
        #cop.close()
-
-obj=Write()
-obj.createFile()
-obj.writee(0,'Munim','munim.iftikhar','0367')

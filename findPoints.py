@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import xlrd as rd
 import pandas as pd
 from ReadFile import readFile
+import numpy as np
 
 class Find_Points:
 
@@ -26,14 +27,19 @@ class Find_Points:
 
 
     def find_max(self,marks=[],reg=[]):
-        self.max = min(marks)
+        self.max = max(marks)
         index = 0
         for i in range(len(marks)):
-            if (marks[i] == self.min):
+            if (marks[i] == self.max):
                 index = i
                 break
             i = i + 1
-        self.min_cell = reg[index]
+        self.max_cell = reg[index]
 
-    def find_avg(self,marks=[],tmarks=0.0):
-        self.avg = ((sum(marks))/tmarks)
+    def find_avg(self,marks=[]):
+        sum=0.0
+        for i in range(1,len(marks)):
+               sum=sum+marks[i]
+
+        self.avg = (sum / (len(marks)-1))
+

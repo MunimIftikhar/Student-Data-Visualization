@@ -8,8 +8,8 @@ class emailSender:
         self.recievers=recievers
 
     def Mail(self,msg):
-            username = 'example@ucp.edu.pk'
-            password = 'example'
+            username = 'munim.iftikhar@ucp.edu.pk'
+            password = ''
            # header = 'Subject: PYTHON PROJECT Work Ignore IT\n'
        #     msg = """Subject: PYTHON PROJECT Work Ignore IT\n
         #    SORRY FOR THE MAIL JUST FOR PROJECT WORK GIVEN TO ME BY SIR
